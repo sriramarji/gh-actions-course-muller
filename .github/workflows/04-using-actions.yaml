@@ -1,0 +1,14 @@
+name: 04- Using-actions
+
+on: push
+
+jobs:
+  react-app-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: action/checkout@v4
+
+      - name: Printing Folders
+        run: ls
+
