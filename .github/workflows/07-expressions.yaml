@@ -1,5 +1,5 @@
-name: 07- Expressions
-run-name: 07- Expressions | DEBUG - $ {{ inputs.debug && 'ON' || 'OFF' }} 
+name: 07 - Expressions
+run-name: 07 - Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }} 
 
 on:
   push:
@@ -27,6 +27,3 @@ jobs:
         
       - name: Greeting
         run: echo "Hello world"
-          
-
-          
