@@ -1,4 +1,5 @@
 name: 07- Expressions
+run-name: 07- Expressions | DEBUG - $ {{ inputs.debug && 'ON' || 'OFF' }} 
 
 on:
   push:
@@ -20,7 +21,7 @@ jobs:
           echo "commit SHA: ${{ github.sha }}"
           echo "Runner OS: ${{ runner.os }}"
           
-      - name: '[debug] Print when triggered from main'
+      - name: '[debug] Print when triggered from master'
         if: ${{ inputs.debug && github.ref == 'refs/heads/master' }}
         run: echo "I triggered from master"
         
