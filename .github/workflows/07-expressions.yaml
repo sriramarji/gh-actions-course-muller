@@ -1,0 +1,31 @@
+name: 07- Expressions
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
+
+jobs:
+  expressions-prac:
+    runs-on: ubuntu-latest
+    steps:
+      - name: '[debug] Print start-up data'
+        if: ${{ inputs.debug }}
+        run: |
+          echo "Triggered by: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "commit SHA: ${{ github.sha }}"
+          echo "Runner OS: ${{ runner.os }}"
+          
+      - name: '[debug] Print when triggered from main'
+        if: ${{ inputs.debug && github.ref == 'refs/heads/master' }}
+        run: echo "I triggered from master"
+        
+      - name: Greeting
+        run: echo "Hello world"
+          
+
+          
