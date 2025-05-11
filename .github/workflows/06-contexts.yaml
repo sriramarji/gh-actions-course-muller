@@ -10,7 +10,7 @@ on:
         default: false
 env:
   MY_WORKFLOW_VAR: 'workflow'
-  MY_OVERWRIITEN_VAR: 'workflow'
+  MY_OVERWRITTEN_VAR: 'workflow'
 jobs:
   test:
     runs-on: ubuntu-latest
