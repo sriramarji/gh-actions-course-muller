@@ -37,7 +37,8 @@ jobs:
      - name: Failed step
        run: |
           echo "I will fail"
-          echo "pathak"
-          exit 1    
+          echo "pathak" 
      - name: Say goodbye
-       run: echo "Goodbye!"
+       run: |
+          echo "Goodbye!"
+          exit 1
