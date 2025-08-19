@@ -1,44 +1,44 @@
-# name: 01- Building Blocks
+name: 01- Building Blocks
 
-# on: workflow_dispatch
+on: workflow_dispatch
 
-# jobs:
-#   echo-hello:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Say hello
-#         run: echo 'Hello World'
-
-#   echo-goodbye:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: success step
-#         run: |
-#           echo "I will pass next time"
-#           exit 0
-#       - name: say goodbye
-#         run: echo "Good bye"
-
-name: 01 - Building Blocks
-
-on:
-  #push 
-  workflow_dispatch
-  
 jobs:
   echo-hello:
-   runs-on: ubuntu-latest
-   steps:
-     - name: Say hello
-       run: echo "Hello, World!"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo 'Hello World'
+
   echo-goodbye:
-   runs-on: ubuntu-latest
-   steps:
-     - name: Failed step
-       run: |
-          echo "I will fail"
-          echo "pathak" 
-     - name: Say goodbye
-       run: |
-          echo "Goodbye!"
-          exit 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: success step
+        run: |
+          echo "I will pass next time"
+          exit 0
+      - name: say goodbye
+        run: echo "Good bye"
+
+# name: 01 - Building Blocks
+
+# on:
+#   #push 
+#   workflow_dispatch
+  
+# jobs:
+#   echo-hello:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Say hello
+#        run: echo "Hello, World!"
+#   echo-goodbye:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Failed step
+#        run: |
+#           echo "I will fail"
+#           echo "pathak" 
+#      - name: Say goodbye
+#        run: |
+#           echo "Goodbye!"
+#           exit 1
