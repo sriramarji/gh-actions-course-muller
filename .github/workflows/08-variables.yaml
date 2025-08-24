@@ -36,8 +36,6 @@ jobs:
     steps:
       - name: print variables
         run: |
-          #echo "${{ vars.ORG_VAR }}"
-          #echo "${{ vars.OVERWRITTEN_VAR}}"
           echo "${{ vars.REPOSITORY_VAR }}"
  
   echo-prod:
@@ -46,8 +44,6 @@ jobs:
     steps:
       - name: Print prod variables
         run: |
-          #echo "${{ vars.ORG_VAR }}"
-          #echo "${{ vars.OVERWRITTEN_VAR}}"
           echo "${{ vars.REPOSITORY_VAR }}"
           echo "${{ vars.TARGET_VAR }}"
   echo-undefined:
