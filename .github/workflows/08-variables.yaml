@@ -32,7 +32,7 @@ jobs:
         run: | 
           echo "Step env var: ${{ env.OVERWRITTEN }}"
   echo2:
-    runs-on: ubuntu-latets
+    runs-on: ubuntu-latest
     steps:
       - name: print variables
         run: |
