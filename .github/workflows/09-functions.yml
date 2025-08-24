@@ -1,29 +1,52 @@
-name: 09 - Functions
+# name: 09 - Functions
 
-on: 
+# on: 
+#   pull_request:
+#   workflow_dispatch:
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#        - name: sleep for 20 seconds
+#          run: sleep 20
+#        - name: Failing step
+#          run: exit 1
+#        - name: I'll be skipped
+#          if: ${{ success() }}
+#          run: echo "I'll print if previous steps succeed"
+#        - name: I'll execute
+#          if: ${{ failure() }}
+#          run: echo "I'll print if any previous step fails"
+#        - name: I'll execute
+#          if: ${{ !cancelled() }}
+#          run: echo "I'll always print, except when workflow is cancelled"
+#        - name: I'll execute when cancelled
+#          if: ${{cancelled() }}
+#          run: echo "I'll always print if workflow has been cancelled"
+
+
+name: 09 - Using Functions
+
+on:
   pull_request:
   workflow_dispatch:
-
+  
 jobs:
-  test:
+  echo1:
     runs-on: ubuntu-latest
     steps:
-       - name: sleep for 20 seconds
-         run: sleep 20
-       - name: Failing step
-         run: exit 1
-       - name: I'll be skipped
-         if: ${{ success() }}
-         run: echo "I'll print if previous steps succeed"
-       - name: I'll execute
-         if: ${{ failure() }}
-         run: echo "I'll print if any previous step fails"
-       - name: I'll execute
-         if: ${{ !cancelled() }}
-         run: echo "I'll always print, except when workflow is cancelled"
-       - name: I'll execute when cancelled
-         if: ${{cancelled() }}
-         run: echo "I'll always print if workflow has been cancelled"
-         
-
-    
+      - name: Failing step
+        run: exit 1
+      - name: I will be skipped
+        if: ${{ success() }}
+        run: echo "I will print if previous steps succeed."
+      - name: I will execute
+        if: ${{ failure() }}
+        run: echo "I will print if any previous step fails"
+      - name: I will execute
+        if: ${{ !cancelled() }}
+        run: echo "I  will always print, except when the workflow is cancelled"
+      - name: I will execute when cancelled
+        if: ${{ cancelled() }}
+        run: echo "I  will print, when the workflow is cancelled"
