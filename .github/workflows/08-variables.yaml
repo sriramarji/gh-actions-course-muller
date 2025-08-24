@@ -31,5 +31,28 @@ jobs:
           OVERWRITTEN: 'I have been overwritten at the step level'
         run: | 
           echo "Step env var: ${{ env.OVERWRITTEN }}"
-  
-  
+  echo2:
+    runs-on: ubuntu-latets
+    steps:
+      - name: print variables
+        run: |
+          #echo "${{ vars.ORG_VAR }}"
+          #echo "${{ vars.OVERWRITTEN_VAR}}"
+          echo "${{ vars.REPOSITORY_VAR }}"
+ 
+  echo-prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Print prod variables
+        run: |
+          #echo "${{ vars.ORG_VAR }}"
+          #echo "${{ vars.OVERWRITTEN_VAR}}"
+          echo "${{ vars.REPOSITORY_VAR }}"
+          echo "${{ vars.TARGET_VAR }}"
+  echo-undefined:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print undefined variables
+        run: |
+          echo "${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
