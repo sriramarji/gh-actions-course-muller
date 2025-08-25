@@ -40,12 +40,14 @@ jobs:
         run: echo "${{ github.event.pull_request.title }}"
       - name: print PR labels
         run: |
-          cat >> EOF
+          cat << EOF
           ${{ toJSON(github.event.pull_request.labels) }}
           EOF
       - name: Bug step
         if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix') }}
         run: echo "bug fix"
+      - name: sleep
+        run: sleep 20
       - name: Failing step
         run: exit 1
       - name: I will be skipped
