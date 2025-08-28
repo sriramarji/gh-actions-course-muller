@@ -9,7 +9,9 @@ jobs:
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                os: [ubuntu-latest, windows-latest]
+                os: 
+                    - ubuntu-latest
+                    - windows-latest
                 node-version: [18.x, 20.x, 21.x]
         steps:
             - name: Setup node
