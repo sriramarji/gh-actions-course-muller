@@ -23,13 +23,12 @@ jobs:
               uses: actions/setup-node@v3
               with:
                 node-version: ${{ matrix.node-version }}
-            - name: fail if experimental
-              if: matrix.tag == 'experimental'
-              run: exit 1
+            # - name: fail if experimental
+            #   if: matrix.tag == 'experimental'
+            #   run: exit 1
             - name: Perform some tests
               run: |
                 echo "Running tests on OS ${{ matrix.os }} and NodeJS ${{ matrix.node-version }}"
-                sleep 10
             - name: upload test results
               run: echo "uploading test results"
 
