@@ -8,7 +8,7 @@ jobs:
         name: ${{ matrix.os }}-${{ matrix.node-version }}
         runs-on: ${{ matrix.os }}
         strategy:
-            fail-fast: false
+            fail-fast: true
             matrix:
                 os: [ubuntu-latest, windows-latest]
                 node-version: [18.x, 20.x, 21.x]
@@ -52,5 +52,3 @@ jobs:
       steps:
         - name: Dummy step
           run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}-${{ matrix.opacity }}"
-
-
