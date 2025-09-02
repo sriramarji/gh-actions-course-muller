@@ -36,10 +36,24 @@ jobs:
         steps:
             - name: E2E tests
               run: echo "Running E2E"
-    deploy-prod:
+    deploy-prod-frontend:
         runs-on: ubuntu-latest
         needs: e2e-tests
         environment: prod
         steps:
             - name: Echo vars
-              run: echo "prod deployment"
+              run: echo "frontend-prod deployment"
+    deploy-prod-backend1:
+        runs-on: ubuntu-latest
+        needs: e2e-tests
+        environment: prod
+        steps:
+            - name: Echo vars
+              run: echo "backend1-prod deployment"
+    deploy-prod-backend2:
+        runs-on: ubuntu-latest
+        needs: e2e-tests
+        environment: prod
+        steps:
+            - name: Echo vars
+              run: echo "backend2-prod deployment"
