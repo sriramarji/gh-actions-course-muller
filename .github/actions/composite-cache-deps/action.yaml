@@ -17,7 +17,7 @@ runs:
   steps:
     - name: setup nodejs version ${{ inputs.node-version }}
       uses: actions/setup-node@v3
-      with
+      with:
         node-version: ${{ inputs.node-version }}
     - name: Cache dependencies
       id: cache
