@@ -15,17 +15,17 @@ async function run() {
   core.setSecret(ghToken);
 
   if (!validateBranchName({ branchName: baseBranch })) {
-    core.error('Invalid base-branch name. Branch names should include only characters, numbers, hyphens, underscores, dots, and forward slashes')
+    core.setFailed('Invalid base-branch name. Branch names should include only characters, numbers, hyphens, underscores, dots, and forward slashes')
     return;
   }
 
   if (!validateBranchName({ branchName: targetBranch })) {
-    core.error('Invalid target-branch name. Branch names should include only characters, numbers, hyphens, underscores, dots, and forward slashes')
+    core.setFailed('Invalid target-branch name. Branch names should include only characters, numbers, hyphens, underscores, dots, and forward slashes')
     return;
   }
 
   if (!validateDirectoryName({ dirName: workingDir })) {
-    core.error('Invalid working-directory name. Directory names should include only characters, numbers, hyphens, underscores, dots, and forward slashes')
+    core.setFailed('Invalid working-directory name. Directory names should include only characters, numbers, hyphens, underscores, dots, and forward slashes')
     return;
   }
   
