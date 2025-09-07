@@ -8,7 +8,7 @@ inputs:
     description: branch used as base for dependency update checks
     default: master
     required: false
-  target-branch:
+  head-branch:
     description: branch from which PR is created
     default: update-dependencies
     required: false
