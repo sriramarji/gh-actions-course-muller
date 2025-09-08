@@ -31,6 +31,5 @@ jobs:
           url: ${{ inputs.url }}
           max_trails: ${{ inputs.max_trails }}
           delay: ${{ inputs.delay }}
-          
 
   
