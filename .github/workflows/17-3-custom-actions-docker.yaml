@@ -5,7 +5,7 @@ on:
     inputs:
       url:
         type: choice
-        options
+        options:
           - 'https://www.google.com'
           - 'https://www.invalid-ahfgjghvhfhjkhj.com'
           - 'invalid-jhjfddljgg'
@@ -17,9 +17,7 @@ on:
         description: Delay in seconds between trials
         default: '5'
         required: false
-        
-  
-
+      
 jobs:
   ping-url:
     runs-on: ubuntu-latest
@@ -31,5 +29,3 @@ jobs:
           url: ${{ inputs.url }}
           max_trails: ${{ inputs.max_trails }}
           delay: ${{ inputs.delay }}
-
-  
